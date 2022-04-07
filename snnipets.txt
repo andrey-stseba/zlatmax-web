@@ -42,7 +42,7 @@
 		"scope": "html",
 		"prefix": "swiper",
 		"body": [
-			"<div class=\"${1:имя-блока}__slider swiper\">\n\t<div class=\"${1:имя-блока}__wrapper swiper-wrapper\">\n\t\t<div class=\"${1:имя-блока}__slide swiper-slide\"></div>\n\t</div>\n</div>"
+			"<div class=\"${1:имя-блока}__slider\">\n\t<div class=\"${1:имя-блока}__wrapper\">\n\t\t<div class=\"${1:имя-блока}__slide\"></div>\n\t</div>\n</div>"
 		],
 		"description": "Добавляет базовый HTML код слайдера Swiper"
 	},
