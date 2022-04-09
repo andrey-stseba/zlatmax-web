@@ -144,33 +144,35 @@ function initSliders () {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
       observer: true,
       // parallax: true,
       observeParents: true,
       slidesPerView: 4,
       spaceBetween: 30,
+      // watchOverflow: true,
       // autoHeight: true,
       speed: 800,
 
       //touchRatio: 0,
       //simulateTouch: false,
-      // loop: true,
+      loop: true,
       //preloadImages: false,
       //lazy: true,
 
       /*
 			// Эффекты
 			effect: 'fade',*/
-      // autoplay: {
-      //   delay: 3000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
 
       // Пагинация
 
       pagination: {
         el: '.products-slider__dotts',
+        dynamicBullets: true,
         clickable: true
       },
 
@@ -184,27 +186,99 @@ function initSliders () {
 
       // Кнопки "влево/вправо"
       // Брейкпоинты
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        1370: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        }
+      },
+
+      // События
+      on: {}
+    })
+  }
+  if (document.querySelector('.products-new')) {
+    // Указываем скласс нужного слайдера
+    // Создаем слайдер
+    new Swiper('.products-new__slider', {
+      // Указываем скласс нужного слайдера
+      // Подключаем модули слайдера
+      // для конкретного случая
+      modules: [Navigation, Pagination, Autoplay],
+      observer: true,
+      // parallax: true,
+      observeParents: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      // watchOverflow: true,
+      // autoHeight: true,
+      speed: 800,
+
+      //touchRatio: 0,
+      //simulateTouch: false,
+      loop: true,
+      //preloadImages: false,
+      //lazy: true,
+
       /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
+			// Эффекты
+			effect: 'fade',*/
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+
+      // Пагинация
+
+      pagination: {
+        el: '.products-new__dotts',
+        dynamicBullets: true,
+        clickable: true
+      },
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
 			},
 			*/
+
+      // Кнопки "влево/вправо"
+      // Брейкпоинты
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1330: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+
       // События
       on: {}
     })

@@ -336,8 +336,38 @@
             </div>
           </div>
         </section>
-        @@include('./html/_products-slider.htm',{ "title":"Хиты продаж",
-        "more":"Перейти в каталог" })
+        <section class="page__hits-products hits-products">
+          @@include('./html/_products-slider.htm',{ "title":"Хиты продаж",
+          "more":"Перейти в каталог" })
+        </section>
+        <section class="page__new-products new-products">
+          @@include('./html/_products-new.htm',{ "title":"Новинки",
+          "more":"Больше новинок" })
+        </section>
+        <section
+          class="page__sale-products sale-products sale-products_no-bottom"
+        >
+          @@include('./html/_products-slider.htm',{ "title":"Акции ",
+          "more":"Все акции" })
+        </section>
+        <section class="page__sale-products sale-products">
+          @@include('./html/_products-slider.htm',{ "title":"Акции ",
+          "more":"Все акции" })
+        </section>
+        <section class="page__new-products new-products new-products_no-top">
+          @@include('./html/_products-new.htm',{ "title":"Новинки",
+          "more":"Больше новинок" })
+        </section>
+        <section
+          class="page__sale-products sale-products sale-products_no-bottom"
+        >
+          @@include('./html/_products-slider.htm',{ "title":"Акции ",
+          "more":"Все акции" })
+        </section>
+        <section class="page__sale-products sale-products">
+          @@include('./html/_products-slider.htm',{ "title":"Акции ",
+          "more":"Все акции" })
+        </section>
       </main>
       @@include('./html/_footer.htm',{})
     </div>
