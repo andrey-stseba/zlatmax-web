@@ -1,3 +1,124 @@
 //====================================================================================================
+.footer {
+  background-color: $mainDarkColor;
+  // .footer__text
+
+  &__text {
+  }
+
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__body
+
+  &__body {
+  }
+}
+.text-footer {
+  @include adaptiveValue('padding-top', 60, 40);
+  @include adaptiveValue('padding-bottom', 60, 40);
+  background: url('@img/footer/bg.jpg') top / cover no-repeat;
+  // .text-footer__container
+
+  &__container {
+  }
+
+  // .text-footer__title
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    @include adaptiveValue('font-size', 30, 24);
+    line-height: math.div(46, 30);
+    color: $mainOrange;
+    &:not(:last-child) {
+      margin-bottom: em(30, 30);
+    }
+  }
+
+  // .text-footer__text
+
+  &__text {
+    color: #fff;
+    @include adaptiveValue('font-size', 18, 16);
+    line-height: math.div(27, 18);
+    letter-spacing: 0.03;
+  }
+}
+
+.body-footer {
+  @include adaptiveValue('padding-top', 100, 40);
+  @include adaptiveValue('padding-bottom', 50, 20);
+  display: grid;
+  gap: rem(35);
+  // .body-footer__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+    gap: rem(40);
+    &:not(:last-child) {
+      padding: 0px 0px rem(30) 0px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  // .body-footer__item
+
+  &__item {
+  }
+}
+.item-footer {
+  // .item-footer__spoller
+
+  &__spoller {
+  }
+}
+.spoller-item-footer {
+  // .spoller-item-footer__item
+
+  &__item {
+  }
+
+  // .spoller-item-footer__title
+
+  &__title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    line-height: math.div(22, 18);
+    &:not(:last-child) {
+      margin-bottom: em(30, 18);
+    }
+  }
+
+  // .spoller-item-footer__body
+
+  &__body {
+  }
+}
+.menu-footer {
+  // .menu-footer__list
+
+  &__list {
+  }
+
+  // .menu-footer__item
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: em(20, 18);
+    }
+  }
+
+  // .menu-footer__link
+
+  &__link {
+    line-height: math.div(27, 18);
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
 
 //====================================================================================================
