@@ -203,6 +203,11 @@
       &::before {
         margin: 0px 0px 0px rem(16);
       }
+      @media (max-width: $mobileSmall) {
+        &::before {
+          margin: 0px 0px 0px rem(14);
+        }
+      }
     }
   }
 }
