@@ -70,6 +70,25 @@
 
   &__item {
   }
+  // .body-footer__bottom
+
+  &__bottom {
+    display: flex;
+    gap: rem(20);
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  // .body-footer__rules
+
+  &__rules {
+    max-width: rem(820);
+  }
+
+  // .body-footer__copy
+
+  &__copy {
+  }
 }
 .item-footer {
   // .item-footer__spoller
@@ -116,8 +135,27 @@
     @include adaptiveValue('padding-top', 30, 20);
     @include adaptiveValue('padding-bottom', 30, 20);
   }
+
+  // .spoller-item-footer__text
+
+  &__text {
+    max-width: rem(329);
+    color: #fff;
+    line-height: math.div(27, 18);
+    a {
+      color: $mainOrange;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 .menu-footer {
+  &:not(:last-child) {
+    @include adaptiveValue('margin-bottom', 32, 20);
+  }
   // .menu-footer__list
 
   &__list {
@@ -152,6 +190,81 @@
       &::before {
         font-size: rem(14);
       }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.social-footer {
+  display: flex;
+  gap: rem(24);
+  // .social-footer__item
+
+  &__item {
+  }
+
+  // .social-footer__link
+
+  &__link {
+  }
+}
+
+.footer-subscribe {
+  // .footer-subscribe__label
+
+  &__label {
+    line-height: math.div(22, 18);
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    &:not(:last-child) {
+      margin-bottom: em(10, 18);
+    }
+  }
+
+  // .footer-subscribe__line
+
+  &__line {
+    display: flex;
+    position: relative;
+    .form__error {
+      position: absolute;
+      bottom: -22px;
+      font-size: rem(18);
+      color: $mainOrange;
+    }
+  }
+
+  // .footer-subscribe__input
+
+  &__input {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ffffff;
+    border-radius: rem(3) 0 0 rem(3);
+    border-right: none;
+    box-sizing: border-box;
+    height: rem(48);
+    width: 100%;
+    padding: 0px rem(20);
+    color: #fff;
+  }
+
+  // .footer-subscribe__button
+
+  &__button {
+    border-radius: 0 rem(3) rem(3) 0;
+    flex: 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainOrange;
+    &::before {
+      transform: rotate(-90deg);
+      color: #fff;
+      font-size: rem(10);
     }
   }
 }
