@@ -52,13 +52,14 @@
   @include adaptiveValue('padding-top', 100, 40);
   @include adaptiveValue('padding-bottom', 50, 20);
   display: grid;
-  gap: rem(35);
+  @include adaptiveValue('gap', 35, 15);
   // .body-footer__row
 
   &__row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
-    gap: rem(40);
+    column-gap: rem(40);
+    @include adaptiveValue('row-gap', 40, 20);
     &:not(:last-child) {
       padding: 0px 0px rem(30) 0px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -89,14 +90,31 @@
     color: #fff;
     font-weight: 600;
     line-height: math.div(22, 18);
-    &:not(:last-child) {
-      margin-bottom: em(30, 18);
+    ._spoller-init & {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: rem(10);
+      &::after {
+        content: '\e900';
+        @extend %ic;
+        margin: em(5, 10) 0px 0px 0px;
+        transition: transform 0.3s ease 0s;
+        font-size: rem(10);
+      }
+      &._spoller-active {
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
     }
   }
 
   // .spoller-item-footer__body
 
   &__body {
+    @include adaptiveValue('padding-top', 30, 20);
+    @include adaptiveValue('padding-bottom', 30, 20);
   }
 }
 .menu-footer {
@@ -108,16 +126,33 @@
   // .menu-footer__item
 
   &__item {
+    line-height: 1.5;
+    display: flex;
+    color: rgba(255, 255, 255, 0.8);
     &:not(:last-child) {
       margin-bottom: em(20, 18);
+    }
+    &::before {
+      font-size: rem(18);
+      margin: em(5, 15) em(10, 15) 0px 0px;
     }
   }
 
   // .menu-footer__link
 
   &__link {
+    display: inline-flex;
     line-height: math.div(27, 18);
     color: rgba(255, 255, 255, 0.8);
+    &::before {
+      font-size: rem(18);
+      margin: em(5, 15) em(10, 15) 0px 0px;
+    }
+    &._icon-footer-email {
+      &::before {
+        font-size: rem(14);
+      }
+    }
   }
 }
 

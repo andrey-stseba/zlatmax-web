@@ -248,7 +248,7 @@
     display: grid;
     row-gap: 30px;
     @media (min-width: $tablet) {
-      grid-template-columns: rem(400) 1fr;
+      grid-template-columns: rem(350) 1fr;
       align-items: start;
     }
   }
