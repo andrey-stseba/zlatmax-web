@@ -52,7 +52,7 @@
   @include adaptiveValue('padding-top', 100, 40);
   @include adaptiveValue('padding-bottom', 50, 20);
   display: grid;
-  @include adaptiveValue('gap', 35, 20);
+  @include adaptiveValue('gap', 35, 25);
   // .body-footer__row
 
   &__row {
@@ -197,7 +197,7 @@
     }
     @media (any-hover: hover) {
       &:hover {
-        text-decoration: underline;
+        color: rgba(255, 255, 255, 0.5);
       }
     }
   }
@@ -234,6 +234,9 @@
   &__line {
     display: flex;
     position: relative;
+    &:not(:last-child) {
+      margin-bottom: em(24, 18);
+    }
     .form__error {
       position: absolute;
       bottom: -22px;
@@ -245,7 +248,7 @@
   // .footer-subscribe__input
 
   &__input {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     border: 1px solid #ffffff;
     border-radius: rem(3) 0 0 rem(3);
     border-right: none;
@@ -269,6 +272,67 @@
       transform: rotate(-90deg);
       color: #fff;
       font-size: rem(10);
+    }
+  }
+
+  // .footer-subscribe__checkbox
+
+  &__checkbox {
+    display: flex;
+  }
+
+  // .footer-subscribe__checkbox-input
+
+  &__checkbox-input {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: rem(16);
+    position: relative;
+    &:after {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 0;
+      content: ' ';
+      background-color: rgb(157, 154, 154);
+      color: #fff;
+      display: inline-block;
+      visibility: visible;
+      padding: 0px 4px;
+      border-radius: 2px;
+      border: 1px solid #ffffff;
+    }
+
+    &:checked:after {
+      content: '✓';
+      font-size: 12px;
+      font-weight: bold;
+      line-height: math.div(16, 12);
+    }
+  }
+  input:active,
+  :hover,
+  :focus {
+    outline: 0;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+
+  // .footer-subscribe__checkbox-label
+
+  &__checkbox-label {
+    cursor: pointer;
+  }
+
+  .checkbox {
+    // .checkbox__text
+
+    &__text {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: math.div(22, 16);
+      width: 100%;
     }
   }
 }
