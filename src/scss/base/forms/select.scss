@@ -130,10 +130,12 @@
     .select__value {
       height: rem(40);
       color: rgba(0, 0, 0, 0.5);
+      min-width: rem(232);
       &::after {
         font-size: rem(8);
         @extend %ic;
         content: '\e900';
+        margin-left: em(10, 8);
       }
     }
     .select__option {
