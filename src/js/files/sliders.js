@@ -7,7 +7,13 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper'
+import Swiper, {
+  Navigation,
+  Pagination,
+  Parallax,
+  Autoplay,
+  Thumbs
+} from 'swiper'
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -278,6 +284,98 @@ function initSliders () {
           spaceBetween: 30
         }
       },
+
+      // События
+      on: {}
+    })
+  }
+  if (document.querySelector('.thumbs-images')) {
+    // Указываем скласс нужного слайдера
+    // Создаем слайдер
+    const thumbsSwiper = new Swiper('.thumbs-images', {
+      // Указываем скласс нужного слайдера
+      // Подключаем модули слайдера
+      // для конкретного случая
+
+      modules: [Navigation, Pagination, Thumbs],
+      observer: true,
+      parallax: true,
+      observeParents: true,
+      slidesPerView: 4,
+      spaceBetween: 16,
+      watchOverflow: true,
+      // autoHeight: true,
+      speed: 800,
+
+      //touchRatio: 0,
+      //simulateTouch: false,
+      // loop: true,
+      //preloadImages: false,
+      //lazy: true,
+
+      /*
+			// Эффекты
+			effect: 'fade',*/
+      // Пагинация
+
+      pagination: {
+        el: '.products-new__dotts',
+        dynamicBullets: true,
+        clickable: true
+      },
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+      // Кнопки "влево/вправо"
+      // Брейкпоинты
+
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1330: {
+          slidesPerView: 4,
+          spaceBetween: 16
+        }
+      },
+
+      // События
+      on: {}
+    })
+    new Swiper('.images-product__slider', {
+      // Указываем скласс нужного слайдера
+      // Подключаем модули слайдера
+      // для конкретного случая
+      modules: [Navigation, Pagination, Autoplay, Thumbs],
+      observer: true,
+      // parallax: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      watchOverflow: true,
+      // autoHeight: true,
+      speed: 800,
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false
+      // },
+      thumbs: {
+        swiper: thumbsSwiper
+      },
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
 
       // События
       on: {}

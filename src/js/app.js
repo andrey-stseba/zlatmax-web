@@ -83,7 +83,7 @@ flsForms.formFieldsInit({ viewPass: false })
 flsForms.formSubmit(true)
 
 /* Модуль формы "колличество" */
-// flsForms.formQuantity();
+flsForms.formQuantity()
 
 /* Модуль звездного рейтинга */
 flsForms.formRating()
