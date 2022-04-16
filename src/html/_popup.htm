@@ -3,7 +3,30 @@
     <div class="popup__content">
       <button data-close type="button" class="popup__close">Закрыть</button>
       <div class="popup__text">
-        Заказать звонок
+        <form
+          action="#"
+          class="spoller-item-footer__body footer-subscribe popup_callback"
+        >
+          <label for="subscribe-input" class="footer-subscribe__label">
+            Заказать звонок
+          </label>
+          <div class="footer-subscribe__line">
+            <input
+              id="subscribe-input"
+              autocomplete="off"
+              type="text"
+              name="form[]"
+              data-error="Введите пожайлуста telefon:+380001234567"
+              data-required="phone"
+              placeholder="+380123456789"
+              class="footer-subscribe__input"
+            />
+            <button
+              type="submit"
+              class="footer-subscribe__button _icon-arrow-bottom"
+            ></button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
