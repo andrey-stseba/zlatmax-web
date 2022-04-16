@@ -12,6 +12,19 @@
   &__info {
     @include adaptiveValue('margin-bottom', 120, 40);
   }
+  // .product__similar
+
+  &__similar {
+  }
+
+  // .product__recommended
+
+  &__recommended {
+    @include adaptiveValue('margin-bottom', 100, 40);
+  }
+  .products-slider__more {
+    display: none;
+  }
 }
 .main-product {
   display: grid;
@@ -286,21 +299,5 @@
     ._tab-spoller & {
       padding: rem(30) 0;
     }
-  }
-}
-
-.product {
-  // .product__similar
-
-  &__similar {
-  }
-
-  // .product__recommended
-
-  &__recommended {
-    margin-bottom: rem(100);
-  }
-  .products-slider__more {
-    display: none;
   }
 }
